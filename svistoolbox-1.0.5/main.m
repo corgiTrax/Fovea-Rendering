@@ -27,14 +27,14 @@ data='36_RZ_4882422_May-15-16-08-32'
 %enduro
 %data='41_RZ_4985749_May-16-20-51-18'
 
-maparcs=[10,20,30,40,50,60,70,80,100,110,120,130,140,150,160,180,200,220];%89
+maparc = 89
 
-for mi=16:18
 maparc=maparcs(mi)
 saveFolderName=strcat('36_FV_', num2str(maparc))
 
-folder=strcat('/home/zharuvrl/Projects/Arcade-Learning-Environment/mypylink/screen_record/',data,'/');
+folder=strcat('/home/zharuvrl/Projects/Arcade-Learning-Environment/mypylink/screen_record/',data,'/'); % change these paths!
 ascFile=strcat('/home/zharuvrl/Projects/Arcade-Learning-Environment/mypylink/screen_record/',data,'.asc');
+
 saveFolder=strcat(saveFolderName,'/');
 mkdir(saveFolder);
 fid=fopen(ascFile,'r');
@@ -111,7 +111,6 @@ svisrelease;
 fclose(fid);
 
 tar(strcat(saveFolderName,'.tar.gz'), saveFolder)
-end
 
 %close(h1);
 %close(h2);
