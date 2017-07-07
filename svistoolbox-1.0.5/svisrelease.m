@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function svisrelease ()
+=======
+function svisrelease_mexgen ()
+>>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 % SVISRELEASE   Release the SVIS toolbox
 %
 % Call SVISRELEASE in order to release resources previously allocated

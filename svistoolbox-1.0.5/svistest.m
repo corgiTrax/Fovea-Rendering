@@ -77,12 +77,17 @@ close(h2);
 close(h3);
 close(h4);
 
+<<<<<<< HEAD
 disp('Success');
 
+=======
+disp 'Success';
+>>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 
 function fail_function(s)
 % Make a function call that should fail
 
+<<<<<<< HEAD
 	caught=false;
 	try
 	    eval(s)
@@ -100,3 +105,23 @@ function h=show(i)
     imagesc(i);
     colormap(gray);
     drawnow
+=======
+caught=false;
+try
+    eval(s)
+catch
+    %fprintf([lasterr '\n']);
+    caught=true;
+end
+
+if not(caught)
+    error(['function call ''' s ''' did not fail, but should have'])
+end
+
+function h=show(i)
+
+h=figure;
+imagesc(i);
+colormap(gray);
+drawnow
+>>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde

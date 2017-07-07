@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function [lhs1] = sviscodec (rhs1)
+=======
+function [lhs1] = sviscodec_mexgen (rhs1)
+>>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 % SVISCODEC Create a space variant imaging system codec
 %
 % C=SVISCODEC(SRC) creates a codec that will encode source image SRC.
