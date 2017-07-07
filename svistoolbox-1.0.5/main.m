@@ -1,4 +1,4 @@
-function main(maparcs,image_folder_name,asc_file_name)
+function main(maparcs, file_name)
 % SVISTEST   Test space variant imaging system functions
 
 % Copyright (C) 2004-2006
@@ -6,13 +6,16 @@ function main(maparcs,image_folder_name,asc_file_name)
 %
 % jsp Thu Apr  8 15:59:22 CDT 2004
 
-saveFolderName=strcat('36_FV_', maparcs)
+temp=strsplit(char(file_name),'_');
+saveFolderName=strcat(temp(1),'_',temp(2),'_FV_', maparcs)
 maparcs = str2double(maparcs);
 
-folder=strcat(image_folder_name,'/');
-ascFile=strcat(asc_file_name,'.asc');
+command = char(strcat('tar xjf',{' '},file_name,'.tar.bz2'));
+system(command);
+folder=strcat(file_name,'/');
+ascFile=strcat(file_name,'.asc');
 
-saveFolder=strcat(saveFolderName,'/');
+saveFolder=char(strcat(saveFolderName,'/'));
 mkdir(saveFolder);
 fid=fopen(ascFile,'r');
 
@@ -74,6 +77,6 @@ end
 svisrelease; 
 fclose(fid);
 
-tar(strcat(saveFolderName,'.tar.gz'), saveFolder)
+tar(char(strcat(saveFolderName,'.tar.gz')), saveFolder)
 
 
