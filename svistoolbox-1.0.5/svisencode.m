@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 function [lhs1] = svisencode (rhs1, rhs2, rhs3)
-=======
-function [lhs1] = svisencode_mexgen (rhs1, rhs2, rhs3)
->>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 % SVISENCODE    Encode the source image
 %
 % I=SVISENCODE(C,ROW,COL) encodes the image specified either by

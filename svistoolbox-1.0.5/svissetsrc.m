@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 function svissetsrc (rhs1, rhs2)
-=======
-function svissetsrc_mexgen (rhs1, rhs2)
->>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 % SVISSETSRC    Set a codec's source image
 %
 % SVISSETSRC(C,SRC) sets codec C's source image to SRC.

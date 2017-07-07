@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 function svissetresmap (rhs1, rhs2)
-=======
-function svissetresmap_mexgen (rhs1, rhs2)
->>>>>>> ac558b5382ec91179aee6ad2338a946a1ac7afde
 % SVISSETRESMAP Set a codec's resolution map
 %
 % SVISSETRESMAP(C,R) sets codec C's resolution map to image R.
