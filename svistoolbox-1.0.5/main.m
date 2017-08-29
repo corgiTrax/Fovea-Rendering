@@ -11,8 +11,8 @@ temp=strsplit(char(file_name),'_');
 saveFolderName=strcat(temp(1),'_',temp(2),'_FV_', maparcs)
 maparcs = str2double(maparcs);
 
-command = char(strcat('tar xjf',{' '},file_name,'.tar.bz2'));
-system(command);
+%command = char(strcat('tar xjf',{' '},file_name,'.tar.bz2'));
+%system(command);
 folder=strcat(file_name,'/');
 ascFile=strcat(file_name,'.asc');
 
@@ -28,7 +28,7 @@ num_files
 svisinit;
 
 for f=1:num_files
-    if mod(f, 500)==0
+    if mod(f, 2000)==0
         svisrelease;
         svisinit;
         fprintf('%i images has been processed\n',f)
@@ -53,7 +53,7 @@ for f=1:num_files
             xpos=str2double(gaze_pos(2))/8; % xscale: x is column
             ypos=str2double(gaze_pos(3))/4; % yscale: y is row
         end
-        if size(strfind(line,'key_pressed'),2) ~= 0 % find last gaze pos
+        if size(strfind(line,'key_pressed'),2) ~= 0 || size(strfind(line,'END'),2) ~= 0 % find last gaze pos; the or condition is for the last frame
             foundKeyPress=true;
         end
     end
@@ -74,8 +74,10 @@ for f=1:num_files
     imwrite(dest, strcat(saveFolder,char(filenames(f))));
 end
 
+fprintf('All images has been processed\n')
 svisrelease; 
 fclose(fid);
 
+fprintf('Compressing...\n')
 tar(char(strcat(saveFolderName,'.tar.gz')), saveFolder)
 
